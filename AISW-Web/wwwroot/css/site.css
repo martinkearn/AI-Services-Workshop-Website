@@ -83,11 +83,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-family: EurostileLTStd-BoldEx2,EurostileLTStd-BoldCn,'Bebas Neue',Arial,sans-serif
+    font-family: EurostileLTStd-BoldEx2,EurostileLTStd-BoldCn,Arial,sans-serif
 }
 
 h2, h3, h4, h5, h6 {
-    font-family: EurostileLTStd-BoldCn,'Bebas Neue',Arial,sans-serif
+    font-family: EurostileLTStd-BoldCn,Arial,sans-serif
 }
 
 .jumbotron h1 {
@@ -104,7 +104,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .navbar {
-    font-family: EurostileLTStd-BoldCn,'Bebas Neue',Lato,sans-serif;
+    font-family: EurostileLTStd-BoldCn,sans-serif;
     text-transform: uppercase
 }
 
