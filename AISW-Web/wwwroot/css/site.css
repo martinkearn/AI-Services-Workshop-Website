@@ -30,6 +30,7 @@ h4 {
 }
 
 .jumbotron {
+    background-image: linear-gradient(rgba(0,0,0,.9),rgba(0,0,0,.4)),url(../images/clouds.jpg);
     background-position: center center;
     margin-bottom: 0;
     background-size: cover;
@@ -39,14 +40,6 @@ h4 {
     .jumbotron p {
         font-size: 2rem
     }
-
-.jumbotron-calendar, .jumbotron-speaking {
-    background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.1)),url(../images/banner-speaking.jpg)
-}
-
-.jumbotron, .jumbotron-articles, .jumbotron-resources, .jumbotron-speaking {
-    background-image: linear-gradient(rgba(0,0,0,.9),rgba(0,0,0,.4)),url(../images/banner-home.jpg)
-}
 
 .navbar-inverse .navbar-nav > li > a, .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
     text-decoration: none
@@ -93,6 +86,14 @@ h2, h3, h4, h5, h6 {
 .jumbotron h1 {
     font-weight: 900;
     font-size: 4.5rem
+}
+
+/* Make header font smaller for smaller screens */
+@media screen and (max-width: 767px) {
+    .jumbotron h1 {
+        font-weight: 900;
+        font-size: 3rem
+    }
 }
 
 .jumbotron p {
