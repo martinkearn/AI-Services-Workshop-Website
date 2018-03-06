@@ -41,13 +41,21 @@
         </div>
     </nav>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
+    @RenderBody()
 
-        </footer>
-    </div>
+    <footer class="footer container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Don't be a stranger...</p>
+                    <a href="#"><i class="fa fa-slack fa-lg footer-icon" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter fa-lg footer-icon" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-github fa-lg footer-icon" aria-hidden="true"></i></a>
+                    <a href="@string.Format("mailto:martin.kearn@microsoft.com?Subject=Enquiry%20from%20AISW")"><i class="fa fa-envelope-o fa-lg footer-icon" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
