@@ -10,7 +10,12 @@ body {
     background-color: #002050
 }
 
-a:hover {
+section
+{
+    margin-bottom: 70px;
+}
+
+a {
     text-decoration: underline
 }
 
