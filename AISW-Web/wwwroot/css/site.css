@@ -23,6 +23,10 @@ a {
         color: white;
     }
 
+    a:focus {
+        color: white;
+    }
+
 .btn {
     border-radius: 0;
     border: 0;
@@ -58,9 +62,13 @@ h4 {
     text-decoration: none
 }
 
-#home-intro {
-    font-size: 18pt
+.modal-dialog, .modal-title, .modal-body, .modal-footer {
+    color: black !important;
 }
+
+    .modal-body a {
+        color: black;
+    }
 
 footer {
     margin-bottom: 0;
