@@ -31,13 +31,11 @@ a {
     border-radius: 0;
     border: 0;
     text-decoration: none;
+    background-color: #002050
 }
 
 
-    .btn:focus, .btn:hover {
-        color: #fff;
-        background-color: #002050
-    }
+
 
 
 h4 {
