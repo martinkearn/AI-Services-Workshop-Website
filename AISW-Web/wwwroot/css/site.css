@@ -21,18 +21,22 @@ a {
 
 .btn {
     border-radius: 0;
-    border: 0
+    border: 0;
+    text-decoration: none;
 }
+
+
+    .btn:focus, .btn:hover {
+        color: #fff;
+        background-color: #002050
+    }
 
 
 h4 {
     font-size: 16pt
 }
 
-.btn:focus, .btn:hover {
-    color: #fff;
-    background-color: #002050
-}
+
 
 .jumbotron {
     background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.1)),url(../images/clouds.jpg);
