@@ -19,6 +19,10 @@ a {
     text-decoration: underline
 }
 
+    a:visited {
+        color: white;
+    }
+
 .btn {
     border-radius: 0;
     border: 0;
