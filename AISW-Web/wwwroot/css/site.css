@@ -12,7 +12,7 @@ body {
 
 section
 {
-    margin-bottom: 70px;
+    margin-bottom: 60px;
 }
 
 a {
@@ -24,21 +24,22 @@ a {
     border: 0
 }
 
+
 h4 {
     font-size: 16pt
 }
 
 .btn:focus, .btn:hover {
     color: #fff;
-    background-color: #B4009E
+    background-color: #002050
 }
 
 .jumbotron {
-    background-image: linear-gradient(rgba(0,0,0,.9),rgba(0,0,0,.4)),url(../images/clouds.jpg);
+    background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.1)),url(../images/clouds.jpg);
     background-position: center center;
-    margin-bottom: 0;
     background-size: cover;
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
+    margin-bottom: 0;
 }
 
     .jumbotron p {
@@ -100,6 +101,11 @@ h2, h3, h4, h5, h6 {
 
 .jumbotron p {
     font-weight: 200
+}
+
+.container-fluid {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
