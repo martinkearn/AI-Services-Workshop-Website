@@ -10,13 +10,13 @@ body {
     background-color: #002050
 }
 
-section
+/*section
 {
     margin-bottom: 60px;
-}
+}*/
 
 a {
-    text-decoration: underline
+    text-decoration: underline;
 }
 
     a:visited {
@@ -31,7 +31,8 @@ a {
     border-radius: 0;
     border: 0;
     text-decoration: none;
-    background-color: #002050
+    background-color: #002050;
+    color: white;
 }
 
 
