@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AISW_Web.Interfaces;
 using AISW_Web.Models;
+using AISW_Web.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -27,6 +29,9 @@ namespace AISW_Web
             // Add app secret settings. Requires the Microsoft.Extensions.Configuration.UserSecrets Nuget package. 
             services.AddOptions();
             services.Configure<AppSecretSettings>(Configuration);
+
+            // Add repositories
+            services.AddSingleton<IStoreRepository, StoreRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
