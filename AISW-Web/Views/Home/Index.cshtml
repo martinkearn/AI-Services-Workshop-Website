@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<AISW_Web.Models.Link>
+
 <div class="jumbotron">
     <div class="container">
         <h1>Microsoft AI Day</h1>
@@ -342,22 +343,9 @@
     </div>
 </section>
 
-<section id="Links">
-    <div class="container-fluid sequence-background-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Links</h2>
-                    <p>TO DO</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 
 <section id="Survey">
-    <div class="container-fluid sequence-background-6">
+    <div class="container-fluid sequence-background-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -373,13 +361,30 @@
 
 
 <section id="Contact">
-    <div class="container-fluid sequence-background-7">
+    <div class="container-fluid sequence-background-6">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <h2>Contact Us</h2>
                     <p>If you have any questions, before or after the event, please <a href="mailto:martin.kearn@microsoft.com?subject=Enquiry%20from%20AIDay">email us</a>.</p>
                     <p>If you have questions during an event please use <a href="https://join.slack.com/t/aiservicesworkshop/shared_invite/enQtMzI1MjgxNDY0NTc2LTk0NmQ4NDdlNWFiMWM3YTA3NDA2ZDJjMGE0NmI2ZTg0NTk4NDg2ZmJkNWYyNWI5ZTBiZTNjNmZmM2ZlOGI2Y2Q">Slack</a> or <a href="https://twitter.com/search?f=tweets&q=%23msaiday&src=typd">Twitter using #MSAIDay</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Links">
+    <div class="container-fluid sequence-background-7">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Links</h2>
+                    <p>Throughout the workshop we'll reference various online resources. To help you get to these resources, we've created a link shortener as part of this website which usefully lists all the registered links here for quick reference.</p>
+                    @foreach (var item in Model)
+                    {
+                        <p><a href="@item.Url" data-toggle="tooltip" data-placement="top" title="@item.Label; @item.Description"><i class="fa fa-link"></i>@item.Label</a></p>
+                    }
                 </div>
             </div>
         </div>
