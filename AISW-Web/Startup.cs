@@ -24,7 +24,7 @@ namespace AISW_Web
         {
             services.AddMvc();
 
-            // Add app secret settings
+            // Add app secret settings. Requires the Microsoft.Extensions.Configuration.UserSecrets Nuget package. 
             services.AddOptions();
             services.Configure<AppSecretSettings>(Configuration);
         }
