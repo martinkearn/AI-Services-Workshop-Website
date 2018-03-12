@@ -1,0 +1,52 @@
+﻿@model IEnumerable<AISW_Web.Models.Link>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container-fluid sequence-background-3">
+    <div class="container">
+
+        <h2>Index</h2>
+
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Url)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Label)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="@item.Url"> @Html.DisplayFor(modelItem => item.Url)</a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Label) <a href="/@item.Label"><i class="fa fa-link"></i></a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Label })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
