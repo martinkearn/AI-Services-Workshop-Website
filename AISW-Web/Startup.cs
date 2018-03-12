@@ -54,6 +54,11 @@ namespace AISW_Web
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                    "redirect",
+                    "{label}",
+                    new { controller = "Redirect", action = "Index" });
             });
         }
     }
