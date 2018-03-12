@@ -17,17 +17,20 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="Url" class="control-label"></label>
-                        <input asp-for="Url" class="form-control" />
+                        <input asp-for="Url" class="form-control" />    
+                        <small id="UrlHelp" class="form-text text-muted">The full URL that the short link will redirect to.</small>
                         <span asp-validation-for="Url" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Label" class="control-label"></label>
                         <input asp-for="Label" class="form-control" />
+                        <small id="LabelHelp" class="form-text text-muted">People will type in AIDay.info/label .. i.e AIDay.info/GitHub, where 'GitHub' is the label</small>
                         <span asp-validation-for="Label" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Description" class="control-label"></label>
                         <input asp-for="Description" class="form-control" />
+                        <small id="DescriptionHelp" class="form-text text-muted">A short description of the resource at the end of the Url. Can be seen when user's hover on the link.</small>
                         <span asp-validation-for="Description" class="text-danger"></span>
                     </div>
                     <div class="form-group">
