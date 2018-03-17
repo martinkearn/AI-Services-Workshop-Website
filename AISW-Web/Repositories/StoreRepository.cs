@@ -26,8 +26,8 @@ namespace AISW_Web.Repositories
             // Create the batch operation.
             TableBatchOperation batchOperation = new TableBatchOperation();
 
-            // Creat a TableEntityAdapter based on the item
-            TableEntityAdapter<Link> entity = new TableEntityAdapter<Link>(item, _appSecretSettings.TableStoragePartitionKey, item.Label);
+            // Create a TableEntityAdapter based on the item
+            TableEntityAdapter<Link> entity = new TableEntityAdapter<Link>(item, _appSecretSettings.TableStoragePartitionKey, GetRowKey(item.Label));
             batchOperation.InsertOrReplace(entity);
 
             // Execute the batch operation.
@@ -40,7 +40,7 @@ namespace AISW_Web.Repositories
             var table = await GetCloudTable(_appSecretSettings.TableStorageConnectionString, _appSecretSettings.TableStorageContainerName);
 
             // Create a retrieve operation that expects a the right entity.
-            TableOperation retrieveOperation = TableOperation.Retrieve<TableEntityAdapter<Link>>(_appSecretSettings.TableStoragePartitionKey, id);
+            TableOperation retrieveOperation = TableOperation.Retrieve<TableEntityAdapter<Link>>(_appSecretSettings.TableStoragePartitionKey, GetRowKey(id));
 
             // Execute the operation.
             TableResult retrievedResult = await table.ExecuteAsync(retrieveOperation);
@@ -90,8 +90,8 @@ namespace AISW_Web.Repositories
             //get cloudtable
             var table = await GetCloudTable(_appSecretSettings.TableStorageConnectionString, _appSecretSettings.TableStorageContainerName);
 
-            // Create a retrieve operation that takes an entity.
-            TableOperation retrieveOperation = TableOperation.Retrieve<TableEntityAdapter<Link>>(_appSecretSettings.TableStoragePartitionKey, id);
+            // Create a retrieve operation that takes an entity.GetRowKey
+            TableOperation retrieveOperation = TableOperation.Retrieve<TableEntityAdapter<Link>>(_appSecretSettings.TableStoragePartitionKey, GetRowKey(id));
 
             // Execute the retrieve operation.
             TableResult retrievedResult = await table.ExecuteAsync(retrieveOperation);
@@ -110,6 +110,8 @@ namespace AISW_Web.Repositories
                 return null;
             }
         }
+
+        private string GetRowKey(string id) => id.ToLower();
 
 
         private async Task<CloudTable> GetCloudTable(string tableConnectionString, string containerName)
