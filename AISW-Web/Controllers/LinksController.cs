@@ -87,7 +87,8 @@ namespace AISW_Web.Controllers
             {
                 Url = collection["Url"],
                 Label = collection["Label"],
-                Description = collection["Description"]
+                Description = collection["Description"],
+                Category = collection["Category"]
             };
 
             return link;
