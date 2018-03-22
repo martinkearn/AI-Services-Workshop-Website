@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AISW_Web.Models.Link>
+﻿@model IEnumerable<AISW_Web.Models.LinkGroup>
 
 <div class="jumbotron">
     <div class="container">
@@ -380,9 +380,15 @@
                 <div class="col-md-12">
                     <h2>Links</h2>
                     <p>Throughout the workshop we'll reference various online resources. To help you get to these resources, we've created a link shortener as part of this website which usefully lists all the registered links here for quick reference.</p>
-                    @foreach (var item in Model)
+                    @foreach (var linkGroup in Model)
                     {
-                        <p><a href="@item.Url" data-toggle="tooltip" data-placement="top" title="@item.Label; @item.Description"><i class="fa fa-link"></i>@item.Label</a></p>
+                        <h4>@linkGroup.Category</h4>
+                        <ul>
+                            @foreach (var link in linkGroup.Links)
+                            {
+                                <li><a href="@link.Url" data-toggle="tooltip" data-placement="top" title="@link.Label; @link.Description">@link.Label</a></li>
+                            }
+                        </ul>
                     }
                 </div>
             </div>

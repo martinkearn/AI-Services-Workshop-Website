@@ -22,7 +22,15 @@ namespace AISW_Web.Controllers
         {
             var links = await _storeRepository.GetLinks();
 
-            return View(links);
+            var linkCategories = links.Select(l => l.Category).Distinct();
+
+            var linkGroups = new List<LinkGroup>();
+            foreach (var linkCategory in linkCategories)
+            {
+                linkGroups.Add(new LinkGroup() { Category = linkCategory, Links = links.Where(l => l.Category == linkCategory).ToList() });
+            }
+
+            return View(linkGroups);
         }
 
         public IActionResult Error()
